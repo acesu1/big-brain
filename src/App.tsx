@@ -1,17 +1,11 @@
-// import { api } from "../convex/_generated/api";
-// import { SignInButton, UserButton } from "@clerk/clerk-react";
-// import {
-//   Unauthenticated,
-//   Authenticated,
-//   useMutation,
-//   useQuery,
-// } from "convex/react";
+import { ThemeProvider } from "./components/theme-provider";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 
 export function App() {
-  // const documents = useQuery(api.documents.getDocuments);
-  // const createDocument = useMutation(api.documents.createDocuments);
-
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }

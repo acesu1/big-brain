@@ -6,7 +6,6 @@ import "./index.css";
 import { ClerkProvider, useAuth } from "@clerk/clerk-react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { ConvexReactClient } from "convex/react";
-import { ThemeProvider } from "./components/theme-provider";
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -21,9 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <App />
-        </ThemeProvider>
+        <App />
       </ConvexProviderWithClerk>
     </ClerkProvider>
   </React.StrictMode>

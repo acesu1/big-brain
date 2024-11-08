@@ -1,7 +1,6 @@
-import { SignInButton, UserButton } from "@clerk/clerk-react";
-import { Unauthenticated, Authenticated } from "convex/react";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./mode-toggle";
+import { HeaderActions } from "./header-actions";
 
 export function Header() {
   return (
@@ -11,17 +10,10 @@ export function Header() {
           BIGBRAIN
         </Link>
 
-        <div>
-          <Unauthenticated>
-            <SignInButton />
-          </Unauthenticated>
-          <Authenticated>
-            <div className="flex gap-4">
-              <ModeToggle />
+        <div className="flex gap-4 items-center">
+          <ModeToggle />
 
-              <UserButton />
-            </div>
-          </Authenticated>
+          <HeaderActions />
         </div>
       </div>
     </div>
